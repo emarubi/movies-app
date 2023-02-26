@@ -1,6 +1,7 @@
 import Select from 'react-select'
-import { useDispatch, useSelector } from 'react-redux'
-import { setFilter, selectCategories } from '../store/slices/movieSlice'
+import { useDispatch } from 'react-redux'
+import { setFilter } from '../store/slices/movieSlice'
+import { reactSelectStyles, reactSelectTheme } from "../styles/react-select-styles";
 
 export type Option = {
   label: string
@@ -24,6 +25,8 @@ const Filter:React.FC<Props> = ({ options }) => {
         dispatch(setFilter(categories))
       }}
       placeholder="Selectionner Catégorie..."
+      styles={reactSelectStyles()}
+      theme={(currentTheme) => reactSelectTheme(currentTheme)}
     />
         
   )

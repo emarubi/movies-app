@@ -14,8 +14,8 @@ const Header:React.FC<Props> = ({ title, author }) => {
 	}))
 
   return (
-    <header className="w-full md:px-12 sm:px-2">
-        <nav className="w-full flex items-end border-gray-200 px-8 py-2.5 bg-red-600 text-white justify-between gap-5">
+    <header className="w-full">
+        <nav className="w-full flex justify-center gap-10 items-center border-gray-200 px-8 py-2.5 bg-red-600 text-white">
           <div>
             <h1 className="self-center text-6xl font-semibold whitespace-nowrap">
               {title}

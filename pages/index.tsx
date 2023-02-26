@@ -8,7 +8,7 @@ import List from '../components/List'
 const Home: NextPage = () => {
   
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2 px-2 bg-slate-200">
+    <div className="min-h-screen items-center bg-slate-200">
       <Head>
         <title>Movies</title>
         <link rel="icon" href="/favicon.ico" />
@@ -19,7 +19,7 @@ const Home: NextPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      <main className="flex flex-1 flex-col items-center justify-center text-center">
+      <main className="flex flex-1 flex-col items-center text-center">
         <Header title="Movies" author="by Emanuela"/>
         <List />
       </main>
