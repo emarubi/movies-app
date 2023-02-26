@@ -21,7 +21,7 @@ const Filter:React.FC<Props> = ({ options }) => {
       options={options}
       isMulti
       onChange={options => {
-        const categories = options.map(option => option.value)
+        const categories = options.map((option: any) => option.value)
         dispatch(setFilter(categories))
       }}
       placeholder="Selectionner Catégorie..."
