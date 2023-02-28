@@ -37,7 +37,10 @@ export const reactSelectStyles = (): StylesConfig => {
         option: (baseStyles) => ({
             ...baseStyles,
             cursor: 'pointer',
-            color: 'white'
+            color: 'white',
+            '&:hover': { 
+                backgroundColor: 'red'
+            },
         }),
         input: (baseStyles) => ({
             ...baseStyles,
@@ -45,7 +48,7 @@ export const reactSelectStyles = (): StylesConfig => {
         }),
         singleValue: (baseStyles) => ({
             ...baseStyles,
-            color: 'white'
+            color: 'black'
         }),
         multiValue: (baseStyles) => ({
             ...baseStyles,

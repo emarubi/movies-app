@@ -33,36 +33,20 @@ export const moviesSlice = createSlice({
 				movie => movie.id !== action.payload
 			)
 		},
-		like: (state, action: PayloadAction<string>) => {
+		likeMovie: (state, action: PayloadAction<string>) => {
 			state.movies = state.movies.map(movie => {
-				if (movie.id === action.payload) {
-					movie.likes = movie.likes + 1
-				}
-				return movie
+					if (movie.id === action.payload) {
+							movie.likes = movie.likes + 1
+					}
+					return movie
 			})
 		},
-		unlike: (state, action: PayloadAction<string>) => {
+		dislikeMovie: (state, action: PayloadAction<string>) => {
 			state.movies = state.movies.map(movie => {
-				if (movie.id === action.payload) {
-					movie.likes = movie.likes - 1
-				}
-				return movie
-			})
-		},
-		dislike: (state, action: PayloadAction<string>) => {
-			state.movies = state.movies.map(movie => {
-				if (movie.id === action.payload) {
-					movie.dislikes = movie.dislikes + 1
-				}
-				return movie
-			})
-		},
-		undislike: (state, action: PayloadAction<string>) => {
-			state.movies = state.movies.map(movie => {
-				if (movie.id === action.payload) {
-					movie.dislikes = movie.dislikes - 1
-				}
-				return movie
+					if (movie.id === action.payload) {
+							movie.dislikes = movie.dislikes + 1
+					}
+					return movie
 			})
 		},
 	},
@@ -84,8 +68,7 @@ export const moviesSlice = createSlice({
 	},
 })
 
-export const { deleteMovie, like, dislike, unlike, undislike, setFilter } =
-	moviesSlice.actions
+export const { deleteMovie, setFilter, likeMovie, dislikeMovie } = moviesSlice.actions
 export const selectMovies = (state: RootState) => state.movies
 export const selectCategories = (state: RootState) =>
 	Array.from(

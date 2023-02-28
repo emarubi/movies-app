@@ -14,6 +14,12 @@ export type Option = {
   value: string
 }
 
+const itemsPerPage = [
+	{value: 4, label: '4 films'},
+	{value: 8, label: '8 films'},
+	{value: 12, label: '12 films'},
+];
+
 const List:React.FC = () => {
   const { movies, loading, filter } = useSelector(selectMovies)
 	const dispatch = useDispatch<AppDispatch>()
@@ -36,6 +42,12 @@ const List:React.FC = () => {
 
 	if (loading) return <h1>Loading...</h1>
 
+	const options = itemsPerPage.map((item) => {
+		return {
+				value: item.value,
+				label: item.label
+		};
+});
 
 return (
 	<>
@@ -71,15 +83,12 @@ return (
 				pageClassName="hidden"
 			/>
 			<Select
-				options={[4, 8, 12].map(value => ({
-					value,
-					label: value + ' / page',
-				}))}
+				options={options}
 				menuPosition="fixed"
 				onChange={(option: any) =>
 					setmoviesPerPage(option!.value ?? moviesPerPage)
 				}
-				placeholder="Movies per page"
+				placeholder="Films par page"
 				styles={reactSelectStyles()}
       	theme={(currentTheme) => reactSelectTheme(currentTheme)}
 			/>

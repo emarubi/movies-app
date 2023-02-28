@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { BiLike, BiDislike } from 'react-icons/bi'
-import { like, dislike, unlike, undislike } from '../store/slices/movieSlice'
+import { likeMovie, dislikeMovie } from '../store/slices/movieSlice'
 import { Movie } from '../data/movies'
 
 const LIKE = 'like'
@@ -12,34 +12,8 @@ interface Props {
 	data: Movie
 }
 const ToggleButtons: React.FC<Props> = ({ data }) => {
-  const [reaction, setReaction] = useState('neutral')
+  const [reaction, setReaction] = useState('')
 	const dispatch = useDispatch()
-
-	const handleReaction = (input: string) => {
-		if (reaction === NEUTRAL) {
-			setReaction(input)
-			if (input === LIKE) dispatch(like(data.id))
-			else dispatch(dislike(data.id))
-		} else if (reaction === LIKE) {
-			if (input === DISLIKE) {
-				dispatch(unlike(data.id))
-				dispatch(dislike(data.id))
-				setReaction(DISLIKE)
-			} else {
-				dispatch(unlike(data.id))
-				setReaction(NEUTRAL)
-			}
-		} else if (reaction === DISLIKE) {
-			if (input === LIKE) {
-				dispatch(undislike(data.id))
-				dispatch(like(data.id))
-				setReaction(LIKE)
-			} else {
-				dispatch(undislike(data.id))
-				setReaction(NEUTRAL)
-			}
-		}
-	}
 
   return (
     <div className="flex">
@@ -49,7 +23,10 @@ const ToggleButtons: React.FC<Props> = ({ data }) => {
             reaction === LIKE &&
             'bg-gray-600 hover:bg-gray-700 focus:bg-gray-700'
           }`}
-          onClick={() => handleReaction(LIKE)}
+          onClick={() => {
+            dispatch(likeMovie(data.id))
+            setReaction(LIKE)
+          }}
         >
           <BiLike className="h-6 w-6" />
         </button>
@@ -59,7 +36,10 @@ const ToggleButtons: React.FC<Props> = ({ data }) => {
             reaction === DISLIKE &&
             'bg-gray-600 hover:bg-gray-700 focus:bg-gray-700'
           }`}
-          onClick={() => handleReaction(DISLIKE)}
+          onClick={() => {
+            dispatch(dislikeMovie(data.id))
+            setReaction(DISLIKE)
+          }}
         >
           <BiDislike className="h-6 w-6" />
         </button>
