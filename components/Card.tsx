@@ -18,7 +18,7 @@ const dispatch = useDispatch()
 return (
   <div className="flex justify-center w-full md:w-1/3 lg:w-1/4 xl:w-1/5">
     <div className="rounded-md shadow-lg bg-white w-full overflow-hidden max-w-[600px]">
-      <Image src={data?.image || 'https://picsum.photos/600/900'} alt="Film picture" width={600} height={900} loading="eager"/>
+      <Image src={data?.image || 'https://picsum.photos/600/900'} alt="Film picture" width={600} height={900} />
       <div className="p-6">
         <div className="flex justify-between items-center">
           <h5 className="inline-block text-gray-900 text-xl font-bold mb-2 w-3/6 truncate text-left">

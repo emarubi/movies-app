@@ -20,19 +20,18 @@ const Home: NextPage = () => {
       </Head>
 
       <main className="flex flex-1 flex-col items-center text-center">
-        <Header title="Movies" author="by Emanuela"/>
+        <Header title="Movies"/>
         <List />
       </main>
 
       <footer className="flex h-24 w-full items-center justify-center border-t">
         <a
           className="flex items-center justify-center gap-2"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          href="https://https://github.com/emarubi/movies-app"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
-          <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+          by Emanuela
         </a>
       </footer>
     </div>

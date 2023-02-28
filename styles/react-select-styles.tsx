@@ -5,7 +5,7 @@ export const reactSelectTheme = (currentTheme: Theme) => {
         ...currentTheme,
         colors: {
             ...currentTheme.colors,
-            primary25: '#4e6cbd',
+            primary25: 'red',
         },
     };
 };

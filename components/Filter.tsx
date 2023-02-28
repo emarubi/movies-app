@@ -1,7 +1,7 @@
 import Select from 'react-select'
 import { useDispatch } from 'react-redux'
 import { setFilter } from '../store/slices/movieSlice'
-import { reactSelectStyles, reactSelectTheme } from "../styles/react-select-styles";
+import { reactSelectStyles, reactSelectTheme } from "../styles/react-select-styles"
 
 export type Option = {
   label: string
@@ -28,7 +28,6 @@ const Filter:React.FC<Props> = ({ options }) => {
       styles={reactSelectStyles()}
       theme={(currentTheme) => reactSelectTheme(currentTheme)}
     />
-        
   )
 }
 export default Filter
