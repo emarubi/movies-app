@@ -8,7 +8,6 @@ Ajouter un bouton toggle like/dislike
 
 Ajouter un filtre par catégorie (de type multiselect) en supposant qu'on ne les connaisse pas à l'avance (il faut donc les récupérer dynamiquement depuis les films). Si tous les films d'une catégorie sont supprimés, celle-ci ne doit plus apparaître.
 
-### TO DO
 Ajouter un système de pagination avec les fonctionnalités suivantes:
 
 Boutons précédent/suivant
@@ -21,6 +20,18 @@ Il y a une attention aux détails
 /!\ La suppression du comportement asynchrone dans movies.js entraînera une annulation du test.
 
 -------------------------------------
+
+I realised this web app with Next.js.
+To run on your computer, clone this repository then run
+- yarn install 
+- yarn dev
+
+To build it:
+- yarn build
+
+To start it:
+- yarn start
+
 
 ## Deploy your own
 
